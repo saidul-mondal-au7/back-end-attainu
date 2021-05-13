@@ -4,7 +4,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { findUserById } = require("../controllers/postController")
 
-router.post("/", async(req, res) => {
+router.post("/register", async(req, res) => {
     try {
         const { email, password, passwordVerify } = req.body;
     
