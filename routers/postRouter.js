@@ -25,8 +25,11 @@ router.post("/create/:userId", isLoggedIn, isAdmin, isAuthenticated, async (req,
 
 router.get("/allposts", isAuthenticated, async (req, res) => {
   try {
-    const posts = await Post.find();
-    res.json(posts);
+    const {page=1, limit=10} = req.query
+    const posts = await Post.find()
+    .limit(limit * 1)
+    .skip((page - 1) * limit);
+    res.json({total:posts.length, posts});
   } catch (err) {
     console.error(err);
     res.status(500).send();

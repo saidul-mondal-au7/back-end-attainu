@@ -52,7 +52,7 @@ npm start
 - GET: Local Server - http://localhost:5000/post/allposts
 
 ![](/demoPictures/Screenshot4.png)
-
+![](/demoPictures/Screenshot9.png)
 5. login as admin
 - make sure that your role is not 0. change it from your database 0 to some other number.
 - POST: Local Server - http://localhost:5000/auth/login
