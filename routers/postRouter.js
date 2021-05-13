@@ -18,7 +18,7 @@ router.post("/create/:userId", isLoggedIn, isAdmin, isAuthenticated, async (req,
     res.json(savedPost);
 
   } catch (err) {
-    console.error(err);
+    res.send(err.message);
     res.status(500).send();
   }
 });
